@@ -14,7 +14,7 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 0.1F);
-        // her frame de 0.1 derece dönücek
+        transform.Rotate(0, 0, 0.1F); // Dönmeyi sağlıyor
+        transform.Translate(0, 0.01F, 0); // İleri gitmeyi sağlıyor
     }
 }
