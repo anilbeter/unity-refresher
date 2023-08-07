@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        
+        Debug.Log("Ouch!");
+        // player başka bir objeye değdiğinde console da Ouch yazacak
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
