@@ -14,3 +14,4 @@ UserSettings/
 Assets/Scripts/*.meta
 Assets/Sprites
 .vscode/
+**/Delivery Driver Assets/
