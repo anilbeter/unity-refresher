@@ -6,15 +6,38 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb2d;
     [SerializeField] float torqueAmount = 10f;
+    SurfaceEffector2D surfaceEffector2D;
+    [SerializeField] float boostSpeed = 30f;
+    [SerializeField] float baseSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        // FindObjectOfType kullandım çümkü player'da SurfaceEffector2D yok. Ben gidip level sprite shape objectinden alıcam bu componentı. 
+        surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        RotatePlayer();
+        RespondToBoost();
+    }
+
+    void RespondToBoost()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            surfaceEffector2D.speed = boostSpeed;
+        }
+        else
+        {
+            surfaceEffector2D.speed = baseSpeed;
+        }
+    }
+
+    void RotatePlayer()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
