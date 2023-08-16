@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
+    [SerializeField] ParticleSystem finishEffect;
 
     public float reloadDelay = 1.5f;
 
@@ -12,6 +13,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            finishEffect.Play();
             Invoke(nameof(ReloadScene), reloadDelay);
         }
 
