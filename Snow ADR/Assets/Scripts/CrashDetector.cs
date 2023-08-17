@@ -8,11 +8,13 @@ public class CrashDetector : MonoBehaviour
     public float reloadDelay = 1f;
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
+    bool hitGround = true;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ground"))
+        if (other.CompareTag("Ground") && hitGround)
         {
+            hitGround = false;
             // PlayerController scriptinten public DisableControls fonksiyonunu çağırdım
             FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
