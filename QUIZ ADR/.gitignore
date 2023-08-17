@@ -12,6 +12,7 @@ UserSettings/
 *.csproj
 *.sln
 Assets/Scripts/*.meta
+Assets/Scripts/*.asset
 Assets/Sprites
 .vscode/
 **/TextMesh Pro/
