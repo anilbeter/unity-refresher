@@ -13,6 +13,8 @@ public class CrashDetector : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
+            // PlayerController scriptinten public DisableControls fonksiyonunu çağırdım
+            FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
             Invoke(nameof(ReloadScene), reloadDelay);
