@@ -13,14 +13,3 @@ public class QuestionSO : ScriptableObject
         return question;
     }
 }
-
-public class Test
-{
-    readonly QuestionSO questionSO;
-
-    void TestA()
-    {
-        string questionText = questionSO.GetQuestion();
-        // Görüldüğü gibi başka bir class'dan public olan GetGuestion() methoduma erişim sağlayabiliyorum, çünkü public yaptım.
-    }
-}
