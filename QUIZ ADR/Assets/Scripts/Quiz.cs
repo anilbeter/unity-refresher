@@ -47,6 +47,8 @@ public class Quiz : MonoBehaviour
             falseText.color = Color.white;
             falseText.fontWeight = FontWeight.Bold;
         }
+        SetButtonState(false);
+        // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
     }
 
     void DisplayQuestion()
