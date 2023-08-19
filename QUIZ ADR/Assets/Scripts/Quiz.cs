@@ -15,13 +15,7 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        questionText.text = question.GetQuestion();
-
-        for (int i = 0; i < answerButtons.Length; i++)
-        {
-            TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = question.GetAnswer(i);
-        }
+        DisplayQuestion();
     }
 
     public void OnAnswerSelected(int index)
@@ -52,6 +46,17 @@ public class Quiz : MonoBehaviour
             falseText = answerButtons[index].GetComponentInChildren<TextMeshProUGUI>();
             falseText.color = Color.white;
             falseText.fontWeight = FontWeight.Bold;
+        }
+    }
+
+    void DisplayQuestion()
+    {
+        questionText.text = question.GetQuestion();
+
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = question.GetAnswer(i);
         }
     }
 }
