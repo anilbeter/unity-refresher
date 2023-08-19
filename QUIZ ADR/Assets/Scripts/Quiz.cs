@@ -35,15 +35,20 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = timer.fillFraction;
         if (timer.loadNextQuestion)
         {
+            hasAnsweredEarly = false;
             GetNextQuestion();
             timer.loadNextQuestion = false;
         }
         else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
-        { }
+        {
+            DisplayAnswer(-1);
+            SetButtonState(false);
+        }
     }
 
     public void OnAnswerSelected(int index)
     {
+        hasAnsweredEarly = true;
         DisplayAnswer(index);
         SetButtonState(false);
         // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
