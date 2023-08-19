@@ -29,6 +29,11 @@ public class Quiz : MonoBehaviour
         DisplayQuestion();
     }
 
+    void Update()
+    {
+        timerImage.fillAmount = timer.fillFraction;
+    }
+
     public void OnAnswerSelected(int index)
     {
         Image buttonImage;

@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
+        UpdateTimer();
     }
 
     public void CancelTimer()
