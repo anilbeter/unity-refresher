@@ -28,6 +28,7 @@ public class Quiz : MonoBehaviour
     {
         Image buttonImage;
         Image falseImg;
+        TextMeshProUGUI falseText;
 
         if (index == question.GetCorrectAnswerIndex())
         {
@@ -48,7 +49,9 @@ public class Quiz : MonoBehaviour
             buttonImage.sprite = correctAnswerSprite;
             falseImg = answerButtons[index].GetComponent<Image>();
             falseImg.color = new Color(1, 0, 0, (float)0.5);
-
+            falseText = answerButtons[index].GetComponentInChildren<TextMeshProUGUI>();
+            falseText.color = Color.white;
+            falseText.fontWeight = FontWeight.Bold;
         }
     }
 }
