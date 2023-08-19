@@ -27,6 +27,7 @@ public class Quiz : MonoBehaviour
     public void OnAnswerSelected(int index)
     {
         Image buttonImage;
+        Image falseImg;
 
         if (index == question.GetCorrectAnswerIndex())
         {
@@ -45,6 +46,9 @@ public class Quiz : MonoBehaviour
             questionText.text = "Aklın nerde bro doğru cevap:\n" + correctAnswer;
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            falseImg = answerButtons[index].GetComponent<Image>();
+            falseImg.color = new Color(1, 0, 0, (float)0.5);
+
         }
     }
 }
