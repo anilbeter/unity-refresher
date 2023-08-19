@@ -6,12 +6,21 @@ using TMPro;
 
 public class Quiz : MonoBehaviour
 {
+    [Header("Questions")]
     [SerializeField] QuestionSO question;
     [SerializeField] TextMeshProUGUI questionText;
+
+    [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
+    int correctAnswerIndex;
+
+    [Header("Sprites")]
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
-    int correctAnswerIndex;
+
+    [Header("Timers")]
+    [SerializeField] Image timerImage;
+    Timer timer;
 
     void Start()
     {
