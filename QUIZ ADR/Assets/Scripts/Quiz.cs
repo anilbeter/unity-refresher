@@ -32,7 +32,7 @@ public class Quiz : MonoBehaviour
         {
             questionText.text = "Doğru!!";
             buttonImage = answerButtons[index].GetComponent<Image>();
-            buttonImage.color = new Color(0, 1, 0, (float)0.2);
+            // buttonImage.color = new Color(0, 1, 0, (float)0.2);
             TextMeshProUGUI btnText = answerButtons[index].GetComponentInChildren<TextMeshProUGUI>();
             btnText.color = Color.white;
             buttonImage.sprite = correctAnswerSprite;
