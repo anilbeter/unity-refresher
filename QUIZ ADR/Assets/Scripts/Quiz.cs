@@ -44,6 +44,15 @@ public class Quiz : MonoBehaviour
 
     public void OnAnswerSelected(int index)
     {
+        DisplayAnswer(index);
+        SetButtonState(false);
+        // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
+
+        timer.CancelTimer();
+    }
+
+    void DisplayAnswer(int index)
+    {
         Image buttonImage;
 
         if (index == question.GetCorrectAnswerIndex())
@@ -61,10 +70,6 @@ public class Quiz : MonoBehaviour
             buttonImage.sprite = correctAnswerSprite;
 
         }
-        SetButtonState(false);
-        // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
-
-        timer.CancelTimer();
     }
 
     void GetNextQuestion()
