@@ -60,6 +60,8 @@ public class Quiz : MonoBehaviour
         }
         SetButtonState(false);
         // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
+
+        timer.CancelTimer();
     }
 
     void GetNextQuestion()
