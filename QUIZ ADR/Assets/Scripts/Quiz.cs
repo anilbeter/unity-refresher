@@ -51,6 +51,13 @@ public class Quiz : MonoBehaviour
         // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
     }
 
+    void GetNextQuestion()
+    {
+        SetButtonState(true);
+        // Player butonlara tekrar basabiliyor
+        DisplayQuestion();
+    }
+
     void DisplayQuestion()
     {
         questionText.text = question.GetQuestion();
