@@ -7,8 +7,9 @@ public class Timer : MonoBehaviour
     [SerializeField] float timeToCompleteQuestion = 30f;
     [SerializeField] float timeToShowCorrectAnswer = 10f;
     float timerValue;
-
     public bool isAnsweringQuestion = false;
+    public float fillFraction;
+
     void Update()
     {
 
@@ -22,7 +23,7 @@ public class Timer : MonoBehaviour
         {
             if (timerValue > 0)
             {
-
+                fillFraction = timerValue / timeToCompleteQuestion;
             }
             else
             {
@@ -34,7 +35,7 @@ public class Timer : MonoBehaviour
         {
             if (timerValue > 0)
             {
-
+                fillFraction = timerValue / timeToShowCorrectAnswer;
             }
             else
             {
