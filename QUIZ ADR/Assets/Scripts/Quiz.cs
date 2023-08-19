@@ -13,6 +13,7 @@ public class Quiz : MonoBehaviour
     [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
     int correctAnswerIndex;
+    bool hasAnsweredEarly;
 
     [Header("Sprites")]
     [SerializeField] Sprite defaultAnswerSprite;
@@ -37,6 +38,8 @@ public class Quiz : MonoBehaviour
             GetNextQuestion();
             timer.loadNextQuestion = false;
         }
+        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
+        { }
     }
 
     public void OnAnswerSelected(int index)
