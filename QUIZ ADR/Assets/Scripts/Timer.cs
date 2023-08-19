@@ -20,7 +20,11 @@ public class Timer : MonoBehaviour
 
         if (isAnsweringQuestion)
         {
-            if (timerValue <= 0)
+            if (timerValue > 0)
+            {
+
+            }
+            else
             {
                 isAnsweringQuestion = false;
                 timerValue = timeToShowCorrectAnswer;
@@ -28,7 +32,11 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            if (timerValue <= 0)
+            if (timerValue > 0)
+            {
+
+            }
+            else
             {
                 isAnsweringQuestion = true;
                 timerValue = timeToCompleteQuestion;
