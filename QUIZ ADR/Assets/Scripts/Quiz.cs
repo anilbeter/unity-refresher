@@ -60,6 +60,7 @@ public class Quiz : MonoBehaviour
         // butona bastıktan sonra butonların devre dışı kalmasını sağlıyor
 
         timer.CancelTimer();
+        scoreText.text = "Score: " + scoreKeeper.CalculateScore() + "%";
     }
 
     void DisplayAnswer(int index)
