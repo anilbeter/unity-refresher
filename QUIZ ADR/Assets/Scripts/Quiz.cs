@@ -27,9 +27,8 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        // Reminder: başka bir class'dan component aldığım için GetComponent kullanamam. FindObjectOfType kullanmak zorundayım
         timer = FindObjectOfType<Timer>();
-        DisplayQuestion();
+
     }
 
     void Update()
