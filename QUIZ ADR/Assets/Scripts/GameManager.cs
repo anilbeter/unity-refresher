@@ -26,4 +26,9 @@ public class GameManager : MonoBehaviour
             endScreen.gameObject.SetActive(true);
         }
     }
+
+    public void OnReplayLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
