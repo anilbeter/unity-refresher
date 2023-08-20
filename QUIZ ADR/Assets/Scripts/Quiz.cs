@@ -9,7 +9,7 @@ public class Quiz : MonoBehaviour
     [Header("Questions")]
     [SerializeField]
     List<QuestionSO> questions = new();
-    readonly QuestionSO currentQuestion;
+    QuestionSO currentQuestion;
     [SerializeField] TextMeshProUGUI questionText;
 
     [Header("Answers")]
@@ -83,7 +83,21 @@ public class Quiz : MonoBehaviour
     {
         SetButtonState(true);
         SetDefaultButtonSprites();
+        GetRandomQuestion();
         DisplayQuestion();
+    }
+
+    void GetRandomQuestion()
+    {
+        int index = Random.Range(0, questions.Count);
+        currentQuestion = questions[index];
+
+        if (questions.Contains(currentQuestion))
+        {
+            questions.Remove(currentQuestion);
+
+        }
+
     }
 
     void DisplayQuestion()
