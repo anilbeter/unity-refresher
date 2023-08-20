@@ -71,6 +71,7 @@ public class Quiz : MonoBehaviour
             questionText.text = "Doğru!";
             buttonImage = answerButtons[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            scoreKeeper.IncrementCorrectAnswers();
         }
         else
         {
@@ -91,6 +92,7 @@ public class Quiz : MonoBehaviour
             SetDefaultButtonSprites();
             GetRandomQuestion();
             DisplayQuestion();
+            scoreKeeper.IncremenQuestionsSeen();
         }
 
     }
